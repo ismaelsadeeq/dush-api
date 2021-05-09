@@ -1,4 +1,4 @@
-const models = require('../api/auth/models');
+const models = require('../models');
 
 const generateOTP =()=>{
     let value,val;

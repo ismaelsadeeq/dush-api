@@ -17,6 +17,9 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
+      balance: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
