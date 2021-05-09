@@ -224,7 +224,7 @@ Dush api integrated to CELO
       message:Cusd sent successfully
     }
 ```
-## Send Celo USD
+## Get Wallet Balance
 * METHOD : GET,
 * url: api/v1/balance,
 * Authorization: Bearer token(login token generated),
