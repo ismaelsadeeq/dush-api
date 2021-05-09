@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     address: DataTypes.STRING,
-    celoBalance:DataTypes.STRING
+    celoBalance:DataTypes.STRING,
     cusdbalance:DataTypes.STRING
     
   }, {

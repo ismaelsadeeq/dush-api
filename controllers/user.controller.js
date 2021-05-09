@@ -17,10 +17,9 @@ const responseData = {
 const getUser =async (req,res) =>{
   const data = req.user;
   const user = await models.user.findOne(
-    {
-      where:{id:data.id}
-    }
-  )
+          {
+            where:{id:data.id}
+          })
   if(user){
     responseData.data = user
     return re.json(responseData)
@@ -31,5 +30,5 @@ const getUser =async (req,res) =>{
 }
 
 module.exports = {
-
+  getUser
 }

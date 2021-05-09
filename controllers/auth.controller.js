@@ -274,8 +274,8 @@ const accountBalance = async (req,res)=>{
         celobBalance:balance.celoBalance,
         cusdBalance:balance.cUSDBalance
       },
-      where:{
-        id:user.id
+      {
+        where:{id:user.id}
       }
     )
     responseData.status = true

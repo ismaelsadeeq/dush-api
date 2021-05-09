@@ -119,7 +119,7 @@ async function sendCelo(account,address,amnt){
     // 19. Print new balance
     console.log(`Your new account CELO balance: ${celoBalance.toString()}`);
     let data = {
-        status:"success"
+        status:"success",
         celoReceipt:celoReceipt,
         newBalance:celoBalance.toString()
     }
