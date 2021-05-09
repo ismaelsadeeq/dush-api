@@ -13,6 +13,12 @@ router.post('/login',
 router.post('/send-code', 
   controller.sendCode
 );
+router.post('/send-celo', 
+  controller.sendCelo
+);
+router.post('/send-cusd', 
+  controller.sendCusd
+);
 router.post('/verify-email', 
   controller.verifyEmail
 );
