@@ -4,9 +4,9 @@ module.exports = {
     await queryInterface.createTable('otpCodes', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        unique:true,
+        type: Sequelize.UUID
       },
       userId: {
         type: Sequelize.UUID,
@@ -27,6 +27,10 @@ module.exports = {
       },
       updatedAt: {
         allowNull: false,
+        type: Sequelize.DATE
+      },
+      deletedAt :{
+        allowNull: true,
         type: Sequelize.DATE
       }
     });

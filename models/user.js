@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     user.hasMany(models.otpCode,{
       foreignKey:'userId'
     });
-    user.hasOne(models.isLoggedOut,{
+    user.hasOne(models.isLoggedout,{
       foreignKey:'userId'
     });
   }

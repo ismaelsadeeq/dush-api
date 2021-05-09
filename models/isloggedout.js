@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class isLoggedout extends Model {
    
   };
-  isLoggedOut.associate = function(models){
+  isLoggedout.associate = function(models){
     isLoggedOut.belongsTo(models.user,{
       foreignKey:'userId'
     });
