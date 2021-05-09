@@ -17,7 +17,10 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
-      balance: {
+      celoBalance: {
+        type: Sequelize.STRING
+      },
+      cusdBalance: {
         type: Sequelize.STRING
       },
       createdAt: {

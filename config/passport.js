@@ -15,7 +15,7 @@ jwtOption.secretOrKey = process.env.SECRET;
 module.exports = passport =>{
   passport.use(new JwtStrategy(
     jwtOption, async (jwt_payload, done)=>{
-       const out =  await models.isLoggedOut.findOne(
+       const out =  await models.isLoggedout.findOne(
          {
           where:{userId:jwt_payload.id,status:true}
          }

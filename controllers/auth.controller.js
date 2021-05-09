@@ -5,7 +5,7 @@ const JwtStartegy = require("passport-jwt").Strategy;
 const jwt = require("jsonwebtoken");
 const mailer = require("../utilities/email.api");
 const helpers = require("../utilities/helpers");
-const celo = require('../celo/helloCelo');
+const celo = require('../celo/helloCelo')
 require("dotenv").config();
 const mailjet = require ("node-mailjet").connect(process.env.MAILJET_PUBLIC,process.env.MAILJET_PRIVATE);
 
@@ -33,7 +33,7 @@ const register = async (req,res) =>{
       } 
       else
       {
-        const address =await  celo.createAccount();
+        const address = await  celo.createAccount();
          user = await models.user.create(
           {
            id:uuid.v4(),
@@ -222,7 +222,7 @@ const resetPassword = async  (req,res)=>{
   }
 }
 const logout = async (req,res)=>{
-  await models.isLoggedOut.create({id:uuid.v4(),userId:req.user.id,status:true});
+  await models.isLoggedout.create({id:uuid.v4(),userId:req.user.id,status:true});
   responseData.status = true;
   responseData.message = "logged out"
   return res.json(responseData);
@@ -236,6 +236,57 @@ const sendEmail= (data)=>{
    return false
  }
 }
+const sendCelo = async (req,res)=>{
+  let data = req.body;
+  const user = req.user
+  const send = await celo.sendCelo(user.address,data.address,data.amount)
+  if(send){
+    responseData.status = true
+    responseData.message = "Celo sent successfully"
+    responseData.data = send;
+    return res.json(responseData)
+  }
+  responseData.status = false
+  responseData.message = "Something went wrong"
+  return res.json(responseData)
+
+}
+const sendCusd = async (req,res)=>{
+  let data = req.body;
+  const user = req.user
+  const send = await celo.sendCusd(user.address,data.address,data.amount)
+  if(send){
+    responseData.status = true
+    responseData.message = "Cusd sent successfully"
+    responseData.data = send;
+    return res.json(responseData)
+  }
+  responseData.status = false
+  responseData.message = "Something went wrong"
+  return res.json(responseData)
+}
+const accountBalance = async (req,res)=>{
+  const user = req.user
+  const balance = await celo.getBalance(user.address)
+  if(balance){
+    await models.user.update(
+      {
+        celobBalance:balance.celoBalance,
+        cusdBalance:balance.cUSDBalance
+      },
+      where:{
+        id:user.id
+      }
+    )
+    responseData.status = true
+    responseData.message = "Balance updated"
+    responseData.data = balance;
+    return res.json(responseData)
+  }
+  responseData.status = false
+  responseData.message = "Something went wrong"
+  return res.json(responseData)
+}
 
 module.exports = {
   register,
@@ -243,5 +294,8 @@ module.exports = {
   sendCode,
   verifyEmail,
   resetPassword,
-  logout
+  logout,
+  sendCelo,
+  sendCusd,
+  accountBalance
 }
