@@ -35,6 +35,8 @@ Dush api integrated to CELO
 * METHOD : POST,
 * url: api/v1/signup,
 * Request parameters
+
+
     {
       email:string
       password:string,
@@ -42,6 +44,8 @@ Dush api integrated to CELO
     }
   
 * Response 
+
+
     {
       status:true,
       message: Account created succesfully,
@@ -57,11 +61,15 @@ Dush api integrated to CELO
 * url: api/v1/verify-email,
 * Authorization: Bearer token(login token generated),
 * Request parameters
+
+
     {
       code:string
     }
 
 * Response 
+
+
     {
       status:true,
       message:Account Verified
@@ -72,12 +80,16 @@ Dush api integrated to CELO
 * METHOD : POST,
 * url: api/v1/login,
 * Request parameters
+
+
     {
       email:string,
       password:string
     }
 
 * Response 
+
+
     {
       token:876retghjddhe6e7.....,
       data:user:{
@@ -87,17 +99,22 @@ Dush api integrated to CELO
       statusCode:200,
       status:success
     }
+
 ## Logout
 * METHOD : GET,
 * url: api/v1/login,
 * Authorization: Bearer token(login token generated),
 * Request parameters
+
+
     {
       email:string,
       password:string
     }
 
 * Response 
+
+
     {
       status:true,
       message:logged out
@@ -107,11 +124,15 @@ Dush api integrated to CELO
 * METHOD : POST
 * url: api/v1/send-code
 * Request parameters
+
+
     {
       email:string
     }
 
 * Response 
+
+
     {
       status:true
       message:code Sent
@@ -121,6 +142,8 @@ Dush api integrated to CELO
 * METHOD : POST
 * url: api/v1/send-code
 * Request parameters
+
+
     {
       code:string,
       password:string,
@@ -128,6 +151,8 @@ Dush api integrated to CELO
     }
 
 * Response 
+
+
     {
       status:true
       message:Password Changed 
@@ -141,6 +166,8 @@ Dush api integrated to CELO
 * Request parameters
   none
 * Response 
+
+
     {
       status:true,
       user:{
@@ -158,12 +185,16 @@ Dush api integrated to CELO
 * url: api/v1/send-celo,
 * Authorization: Bearer token(login token generated),
 * Request parameters
+
+
     {
       address:string //recievers address
       amount:string //amount to be sent
     }
 
 * Response 
+
+
     {
       status:true,
       message:Celo sent successfully
@@ -174,12 +205,16 @@ Dush api integrated to CELO
 * url: api/v1/send-cusd,
 * Authorization: Bearer token(login token generated),
 * Request parameters
+
+
     {
       address:string //recievers address
       amount:string //amount to be sent
     }
 
 * Response 
+
+
     {
       status:true,
       message:Cusd sent successfully
@@ -189,12 +224,16 @@ Dush api integrated to CELO
 * url: api/v1/balance,
 * Authorization: Bearer token(login token generated),
 * Request parameters
+
+
     {
       address:string //recievers address
       amount:string //amount to be sent
     }
 
 * Response 
+
+
     {
       status:true,
       message:Cusd sent successfully
