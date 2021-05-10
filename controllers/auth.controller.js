@@ -93,7 +93,7 @@ const login = async (req,res)=>{
         const jwt_payload ={
           id:user.id,
         }
-        await models.isLoggedOut.destroy({where:{userId:user.id}}) 
+        await models.isLoggedout.destroy({where:{userId:user.id}}) 
         const token = jwt.sign(jwt_payload,process.env.SECRET);
         user.password = undefined;
         return res.json(
@@ -120,9 +120,9 @@ const sendCode = async (req,res)=>{
   )
   if (user){
     let val = helpers.generateOTP();
-    const summary = "Hello "+user.firstName+", use the code "+ val+" to reset your password to NobaAfrica Account";
-    const msg = "Hello "+user.firstName+", we heard you could not login to your  Account. This things happen to even the most careful of us, you should not feel so bad.  In the meantime, use the code "+ val+" to reset your password for your NobaAfrica Account. You should be back into your account in no time. <br/> <br /> <br /> <br /> <small>If you did not request this, you do not have to do anything  </small>";
-    let names = user.firstName +" "+ user.lastName
+    const summary = "Hello "+user.firstname+", use the code "+ val+" to reset your password to NobaAfrica Account";
+    const msg = "Hello "+user.firstname+", we heard you could not login to your  Account. This things happen to even the most careful of us, you should not feel so bad.  In the meantime, use the code "+ val+" to reset your password for your NobaAfrica Account. You should be back into your account in no time. <br/> <br /> <br /> <br /> <small>If you did not request this, you do not have to do anything  </small>";
+    let names = user.firstname +" "+ user.lastname
     data.variables = {
        "code": val,
        "summary": summary,
