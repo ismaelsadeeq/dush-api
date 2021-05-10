@@ -39,8 +39,8 @@ const register = async (req,res) =>{
            id:uuid.v4(),
            email:data.email,
            address:address,
+           cusdbalance:"0",
            celoBalance:"0",
-           cusdBalance:"0",
            password:data.password
           }
         );
