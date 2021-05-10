@@ -24,7 +24,7 @@
     "uuid": "^8.3.2",
     "web3": "^1.3.5",
     "celo": "^1.1.5",
-    "celo/contractkit":"1.2.0"
+    "@celo/contractkit":"1.2.0"
   },
   "main": "index.js",
   "repository": "https://github.com/ismaelsadeeq/dush-api.git",
