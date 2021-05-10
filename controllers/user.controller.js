@@ -22,7 +22,7 @@ const getUser =async (req,res) =>{
           })
   if(user){
     responseData.data = user
-    return re.json(responseData)
+    return res.json(responseData)
   }
   responseData.status = false
   responseData.message = "Something went wrong"
