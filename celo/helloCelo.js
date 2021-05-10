@@ -88,10 +88,10 @@ async function getBalance(account){
 // Send CELO
 //
 
-async function sendCelo(account,address,amnt){
+async function sendCelo(accoun,address,amnt){
     // 10. Get your account
     // let account = await getAccount()
-
+    let account = await getAccount() 
     // 11. Add your account to ContractKit to sign transactions
     kit.connection.addAccount(account.privateKey);
 
