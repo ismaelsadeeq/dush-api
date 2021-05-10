@@ -239,7 +239,10 @@ const sendEmail= (data)=>{
 const sendCelo = async (req,res)=>{
   let data = req.body;
   const user = req.user
-  const send = celo.sendCelo(user.address,data.address,data.amount)
+  const address = user.address
+  const recieverAddress = data.address
+  const amnt = data.amount
+  const send = await celo.sendCelo(address,recieverAddress,amnt)
   if(send){
     responseData.status = true
     responseData.message = "Celo sent successfully"
