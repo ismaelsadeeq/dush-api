@@ -242,6 +242,7 @@ const sendCelo = async (req,res)=>{
   const address = user.address
   const recieverAddress = data.address
   const amnt = data.amount
+  console.log(address,recieverAddress,amnt)
   const send = await celo.sendCelo(address,recieverAddress,amnt)
   if(send){
     responseData.status = true
