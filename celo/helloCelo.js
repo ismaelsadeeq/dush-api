@@ -7,7 +7,8 @@ const Web3 = require("web3")
 const ContractKit = require('@celo/contractkit')
 
 // 2. Init a new kit, connected to the alfajores testnet
-const web3 = new Web3('https://alfajores-forno.celo-testnet.org')
+// I will now connect to the https://forno.celo.org
+const web3 = new Web3('https://forno.celo.org')
 const kit = ContractKit.newKitFromWeb3(web3)
 //
 // Read Accounts
