@@ -80,9 +80,7 @@ const login = async (req,res)=>{
     const password = data.password;
     const user = await models.user.findOne(
       {
-        where:{email:email},
-        attributes:["id","firstName","lastName","email","password"]
-      
+        where:{email:email}
     }
     );
     if (user){
