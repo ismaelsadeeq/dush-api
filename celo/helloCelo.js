@@ -16,10 +16,10 @@ const kit = ContractKit.newKitFromWeb3(web3)
 //
 
 async function readAccount(address){
-    // 3. Get the token contract wrappers
+    // 3. Get the token contract wrappers.
     let goldtoken = await kit.contracts.getGoldToken()
     let stabletoken = await kit.contracts.getStableToken()
-   // 4. Address to look up
+   // 4. Address to look u
     let anAddress = '0xD86518b29BB52a5DAC5991eACf09481CE4B0710d'
 
     // 5. Get token balances
