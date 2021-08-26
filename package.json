@@ -5,9 +5,12 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "engines": {
+    "node": "v15.0.1"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
-    
+    "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
