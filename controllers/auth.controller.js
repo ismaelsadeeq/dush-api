@@ -47,7 +47,7 @@ const register = async (req,res) =>{
         //generate otp and send email
         let val = helpers.generateOTP();
         let names = data.firstname +' '+ data.lastname
-        const msg = "Welcome "+data.firstname+", use the code "+ val+" to verify your email and activate your NobaAfrica Account";
+        const msg = "Welcome "+data.firstname+", use the code "+ val+" to verify your email and activate your Dush Account";
         data.variables = {
           "names":names,
           "code": val,
